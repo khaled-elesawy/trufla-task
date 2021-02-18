@@ -1,0 +1,54 @@
+[
+    {
+        "id": "nameField",
+        "value": "",
+        "controlType": "textbox",
+        "label": "Name"     
+    },
+
+    {
+        "id": "descriptionField",
+        "value": "",
+        "controlType": "textarea",
+        "label": "description",
+        "cols": "30",
+        "rows": "5" 
+
+    },
+
+    {
+        "id": "genderField",
+        "value": "",
+        "controlType": "radioGroup",
+        "label": "Gender",
+        "options": [
+            {
+                "value": " male"
+            },
+            {
+                "value": " female"
+            }
+        ]
+    },
+    {
+        "id": "rulesField",
+        "value": "",
+        "controlType": "checkbox",
+        "label": "rules"     
+    },
+    {
+        "id": "frameWork",
+        "value": "",
+        "controlType": "dropdown",
+        "label": "FrameWork",
+        "options": [
+            {
+                "value": "angular"
+            },
+            {
+                "value": "react"
+            }
+        ]   
+    }
+    
+]

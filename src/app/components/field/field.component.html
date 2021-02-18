@@ -1,0 +1,42 @@
+
+<form [formGroup]="candidateInfoForm" *ngIf="fields" (ngSubmit)="onSubmit()">
+    <div *ngFor="let field of fields">
+        <div class="form-group">
+
+            <label [attr.for]="field.id">{{field.label}}</label>
+            <div [ngSwitch]="field.controlType">
+                <div>
+                    <input *ngSwitchCase="'textbox'" [formControlName]="field.id" [id]="field.id"
+                        type="text" class="form-control">
+                </div>
+                <div>
+                    <textarea *ngSwitchCase="'textarea'" [formControlName]="field.id" [id]="field.id"
+                        [cols]="field.cols" [rows]="field.rows"></textarea>
+                </div>
+                <div *ngSwitchCase="'dropdown'">
+                    <select [id]="field.id" [formControlName]="field.id">
+                        
+                        <option *ngFor="let opt of field.options" [value]="opt.value">{{opt.value}}
+                        </option>
+                    </select>
+                </div>
+                <div *ngSwitchCase="'checkbox'">
+                    <label for="{{ field.id }}">
+                        <input type="checkbox" [id]="field.id" [formControlName]="field.id"> {{ field.label }} accepted
+                    </label>
+                </div>
+                <div *ngSwitchCase="'radioGroup'">
+                    <span *ngFor="let opt of field.options">
+                        <input type="radio" [value]='opt.value'
+                            [formControlName]="field.id">{{opt.value}}
+                    </span>
+                </div>
+                <br>
+            </div>
+
+    </div>
+    </div>
+    <p>*submit button will render the values of form in console*</p>
+    <button style="margin-right: 5px;" type="submit" class="btn btn-primary">submit</button>
+    <button type="reset" class="btn btn-danger">cancel</button>
+</form>
